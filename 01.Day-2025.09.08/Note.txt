@@ -1,0 +1,169 @@
+
+SWT32051-2025.09.08
+
+01.write an xml document contaring root/parent element attribute child elements sub child elements
+	0.Uinversity Lecturers
+	1.Bank Custemer
+	2.Hospital patients
+code
+<? xml version='1.0' encoding ='UTF-8' ?>
+<Bank id='001'>
+	<customer id='001'>
+		<id>SEU/IS/20/084</id>
+		<accountNo>451145114</accountNo>
+		<name>Kalhara</name>
+		<addres>No 180 dolakandha</addres>
+		<age>24</age>
+	</customer>
+	<customer id='002'>
+		<id>SEU/IS/20/084</id>
+		<accountNo>45811348</accountNo>
+		<name>Janith</name>
+		<addres>No 364 dolakandha</addres>
+		<age>24</age>
+	</customer>
+</Bank>
+
+<university id='001'>
+	<lecturers id ='001'>
+		<id>SEU/IS/20/084</id>
+		<name>Kalhara</name>
+		<addres>No 180 dolakandha</addres>
+		<age>24</age>
+	</lecturers>
+	<lecturers id ='002'>
+		<id>SEU/IS/20/26</id>
+		<name>Ishara</name>
+		<addres>Galle Hikkaduwa</addres>
+		<age>24</age>
+	</lecturers>
+</university>
+
+
+<hospital id='001'>
+	<patients id='001'>
+		<name>Kalhara</name>
+		<addres>No 180 dolakandha</addres>
+		<age>24</age>
+	</patients>
+	<patients id='002'>
+		<name>Avishka</name>
+		<addres>No 180 dolakandha</addres>
+		<age>20</age>
+	</patients>
+</hospital>
+
+ 
+
+ 
+
+ 
+
+
+02.Senario -online shooping cart
+	
+	Root Element -<cart>
+	multiple <item> element attribute 
+		ItemId
+		Quantity
+	Each <Item> has sub Element Attribute <name>,<price>,<category>
+	Include one <customer> Element Attribute  membership
+		Eg:-Goold,Silver
+	Add a nested element <shippingAddress> inside <customer>
+		sub Element
+			<street>
+			<city>
+			<zip>
+			<country>
+
+code
+
+<? xml version='1.0' encoding='UTF-8' ?>
+<cart>
+    
+    <item itemid='001' quantity='5'>
+        <name>Laptop</name>
+        <price>1000$</price>
+        <category>2</category>
+    </item>
+    
+    <customer membership='gold'>
+        <shippingAddress>
+            <street>Ampara</street>
+            <city>Dehiaththakandiya</city>
+            <zip>3502</zip>
+            <country>Sri Lanka</country>
+        </shippingAddress>
+    </customer>
+
+</cart>
+
+
+ 
+
+ 03.Universty course Registion
+
+Root element <Registration>
+Each <Student>
+	studentId
+	year
+Each <student> has multiple <course> elemnt
+Each <course> cantain sub elemnt <title>,<Instroctor>
+Include nested Elemnts sharing course schedule details <shedule>
+	<day>
+	<time>
+
+
+
+Answer
+
+<? xml version='1.0' encoding='UTF-8' ?>
+<Registration>
+    <Student studentid='SEU/IS/20/ICT/084' year='2020'>  
+        
+        <course credit='4' courseCode='SWT32051'>
+        <title>Servise Oriented web Application</title>
+        <instructor>DR.Kumara</instructor>
+        <shedule>
+            <day>2024.08.09</day>
+            <time>10:60 PM</time>
+        </shedule>
+        </course>
+
+        <course credit='3' courseCode='SWT32050'>
+        <title> web Application</title>
+        <instructor>DR.Uchitha</instructor>
+        <shedule>
+            <day>2024.10.02</day>
+            <time>08:60 Am</time>
+        </shedule>
+        </course>
+
+    </Student>
+
+    <Student studentid='SEU/IS/20/BET/006' year='2020'>
+        
+        <course credit='2' courseCode='FUT30110'>
+        <title>Crop</title>
+        <instructor>DR.Sumana</instructor>
+        <shedule>
+            <day>2024.03.25</day>
+            <time>06:00 Am</time>
+        </shedule>
+        </course>
+
+        <course credit='5' courseCode='AAT31022'>
+        <title>Food</title>
+        <instructor>DR.Fathima</instructor>
+        <shedule>
+            <day>2024.03.01</day>
+            <time>10:00 Am</time>
+        </shedule>
+        </course>
+
+    </Student>
+</Registration>
+
+ 
+
+

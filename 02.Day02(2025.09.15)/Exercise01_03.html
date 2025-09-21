@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<div>
+			<table border="2" id="bookTable">
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Year</th>
+				</tr>
+			</table>
+		</div>
+
+		<script>
+			var text, parser, xmlDoc;
+
+			text = "<bookstore>" +
+						"<book>" +
+							"<title>Everyday Italian</title>" +
+							"<author>Giada De Laurentiis</author>" +
+							"<year>2005</year>" +
+						"</book>" +
+						"<book>" +
+							"<title>Java Programming</title>" +
+							"<author>John Willson</author>" +
+							"<year>2014</year>" +
+						"</book>" +
+					"</bookstore>";
+
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(text, "text/xml");
+
+			var books = xmlDoc.getElementsByTagName("book");
+			var table = document.getElementById("bookTable");
+
+			for (var i = 0; i < books.length; i++) {
+				var title = books[i].getElementsByTagName("title")[0].childNodes[0].nodeValue;
+				var author = books[i].getElementsByTagName("author")[0].childNodes[0].nodeValue;
+				var year = books[i].getElementsByTagName("year")[0].childNodes[0].nodeValue;
+
+				var row = "<tr><td>" + title + "</td><td>" + author + "</td><td>" + year + "</td></tr>";
+				table.innerHTML += row;
+			}
+		</script>
+	</body>
+</html>
+

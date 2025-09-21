@@ -1,0 +1,66 @@
+ <html>
+	<body>
+		<div>
+			<table border="2">
+				<tr>
+					<th>Title</th>
+					<th>Author</th>
+					<th>Year</th>
+				</tr>
+				<tr>
+					<td id = "book_title1"></td>
+					<td id = "book_author1"></td>
+					<td id = "book_year1"></td>
+				</tr>
+				<tr>
+					<td id = "book_title2"></td>
+					<td id = "book_author2"></td>
+					<td id = "book_year2"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<script>
+			var text, parser, xmlDoc;
+			
+			text = "<bookstore>"+
+						"<book>" +
+							"<title>Everyday Italian</title>" +
+							"<author>Giada De Laurentiis</author>" +
+							"<year>2005</year>" +
+						"</book>"+
+						"<book>" +
+							"<title>Java Programming</title>" +
+							"<author>John willson</author>" +
+							"<year>2014</year>" +
+						"</book>"+
+					"</bookstore>";
+			
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(text, "text/xml");
+			
+			document.getElementById("book_title1").innerHTML =
+			xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+			
+			document.getElementById("book_author1").innerHTML =
+			xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+			
+			document.getElementById("book_year1").innerHTML =
+			xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+			
+			document.getElementById("book_title2").innerHTML =
+			xmlDoc.getElementsByTagName("title")[1].childNodes[0].nodeValue;
+			
+			document.getElementById("book_author2").innerHTML =
+			xmlDoc.getElementsByTagName("author")[1].childNodes[0].nodeValue;
+			
+			document.getElementById("book_year2").innerHTML =
+			xmlDoc.getElementsByTagName("year")[1].childNodes[0].nodeValue;
+			
+			
+			
+			
+		</script>
+		
+	</body>
+ </html>

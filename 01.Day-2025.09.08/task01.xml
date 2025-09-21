@@ -1,0 +1,46 @@
+<? xml version='1.0' encoding ='UTF-8' ?>
+<Bank id='001'>
+	<customer id='001'>
+		<id>SEU/IS/20/084</id>
+		<accountNo>451145114</accountNo>
+		<name>Kalhara</name>
+		<addres>No 180 dolakandha</addres>
+		<age>24</age>
+	</customer>
+	<customer id='002'>
+		<id>SEU/IS/20/084</id>
+		<accountNo>45811348</accountNo>
+		<name>Janith</name>
+		<addres>No 364 dolakandha</addres>
+		<age>24</age>
+	</customer>
+</Bank>
+
+<university id='001'>
+	<lecturers id ='001'>
+		<id>SEU/IS/20/084</id>
+		<name>Kalhara</name>
+		<addres>No 180 dolakandha</addres>
+		<age>24</age>
+	</lecturers>
+	<lecturers id ='002'>
+		<id>SEU/IS/20/26</id>
+		<name>Ishara</name>
+		<addres>Galle Hikkaduwa</addres>
+		<age>24</age>
+	</lecturers>
+</university>
+
+
+<hospital id='001'>
+	<patients id='001'>
+		<name>Kalhara</name>
+		<addres>No 180 dolakandha</addres>
+		<age>24</age>
+	</patients>
+	<patients id='002'>
+		<name>Avishka</name>
+		<addres>No 180 dolakandha</addres>
+		<age>20</age>
+	</patients>
+</hospital>

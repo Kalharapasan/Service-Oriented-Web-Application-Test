@@ -1,0 +1,19 @@
+<? xml version='1.0' encoding='UTF-8' ?>
+<cart>
+    
+    <item itemid='001' quantity='5'>
+        <name>Laptop</name>
+        <price>1000$</price>
+        <category>2</category>
+    </item>
+    
+    <customer membership='gold'>
+        <shippingAddress>
+            <street>Ampara</street>
+            <city>Dehiaththakandiya</city>
+            <zip>3502</zip>
+            <country>Sri Lanka</country>
+        </shippingAddress>
+    </customer>
+
+</cart>

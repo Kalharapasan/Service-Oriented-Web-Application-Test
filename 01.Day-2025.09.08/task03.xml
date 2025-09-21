@@ -1,0 +1,46 @@
+<? xml version='1.0' encoding='UTF-8' ?>
+<Registration>
+    <Student studentid='SEU/IS/20/ICT/084' year='2020'>  
+        
+        <course credit='4' courseCode='SWT32051'>
+        <title>Servise Oriented web Application</title>
+        <instructor>DR.Kumara</instructor>
+        <shedule>
+            <day>2024.08.09</day>
+            <time>10:60 PM</time>
+        </shedule>
+        </course>
+
+        <course credit='3' courseCode='SWT32050'>
+        <title> web Application</title>
+        <instructor>DR.Uchitha</instructor>
+        <shedule>
+            <day>2024.10.02</day>
+            <time>08:60 Am</time>
+        </shedule>
+        </course>
+
+    </Student>
+
+    <Student studentid='SEU/IS/20/BET/006' year='2020'>
+        
+        <course credit='2' courseCode='FUT30110'>
+        <title>Crop</title>
+        <instructor>DR.Sumana</instructor>
+        <shedule>
+            <day>2024.03.25</day>
+            <time>06:00 Am</time>
+        </shedule>
+        </course>
+
+        <course credit='5' courseCode='AAT31022'>
+        <title>Food</title>
+        <instructor>DR.Fathima</instructor>
+        <shedule>
+            <day>2024.03.01</day>
+            <time>10:00 Am</time>
+        </shedule>
+        </course>
+
+    </Student>
+</Registration>

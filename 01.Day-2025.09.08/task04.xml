@@ -1,0 +1,22 @@
+<? xml version='1.0' encoding='UTF-8' ?>
+<publiation>
+    
+    <proceedings>
+        <proceding>
+            <reference></reference>
+            <artical id=''></artical>
+        </proceding>
+    </proceeding>
+    
+    <journals>
+        <name></name>
+        <volume></volume>
+        <artical></artical>
+    </journals>
+     
+    <author index=''>
+        <name></name>
+        <email></email>
+    </author>
+
+</publiation>

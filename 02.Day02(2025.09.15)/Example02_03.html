@@ -1,0 +1,66 @@
+<html>
+	<body>
+		<div id="content"></div>
+		<script>
+			var text, parser, xmlDoc;
+		    text ="<bookstore> "+
+						"<book category='Entertainment'> "+
+							"<title lang='En'>Harry Potter</title> "+
+							"<Author>JK. Rowling</Author> "+
+							"<Year>2009</Year> "+
+							"<Price>$45.99</Price>"+
+						"</book> "+
+						  
+						"<book category='Fiction'> "+
+							"<title lang='En'>Avengers</title> "+
+							"<Author>Warner Bros</Author> "+
+							"<Year>2010</Year> "+
+							"<Price>$32.89</Price> "+
+						"</book>"+
+						  
+						"<book category='Mysery'> "+
+							  "<title lang='Sp'>The Great Gatsby</title> "+
+							  "<Author>F Scott Fitzgerald</Author> "+
+							  "<Year>1920</Year> "+
+							  "<Price>$1.99</Price> "+
+						"</book> "+
+						  
+						"<book category='Historical'> "+
+							  "<title lang='Fr'>Things Fall Apart</title> "+
+							  "<Author>Chinua Achebe</Author>"+ 
+							  "<Year>1958</Year> "+
+							  "<Price>$12.99</Price> "+
+						"</book> "+
+						  
+						"<book category='Tragedy'>"+
+							  "<title lang='Es'>Hamlet</title>"+
+							  "<Author>William Shakespeare</Author> "+
+							  "<Year>1601</Year> "+
+							  "<Price>$24.99</Price>"+
+						"</book> "+
+					"</bookstore>";
+			
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(text, "text/xml");
+
+			var x = xmlDoc.getElementsByTagName("book"); 
+			
+			for (let i = 0; i < x.length; i++){ 
+				// Fix: Use getElementsByTagName to access Price tag
+				let priceTag = x[i].getElementsByTagName("Price")[0];
+				let oldPrice = parseFloat(priceTag.textContent.replace("$",""));
+				let newPrice = (oldPrice * 1.10).toFixed(2); // Fix: remove extra closing parenthesis
+				priceTag.textContent = "$" + newPrice;
+			} 
+			
+			let result = "Updated price:\n";
+			for(let j = 0; j < x.length; j++){
+				let priceTag = x[j].getElementsByTagName("Price")[0];
+				result += (j + 1) + " . " + priceTag.textContent + "\n";
+			}
+			
+			// Fix: Corrected getElementById (was getElementsById)
+			document.getElementById("content").innerText = result;
+		</script>
+	</body>
+</html>
