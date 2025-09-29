@@ -1,0 +1,23 @@
+<html>
+    <body>
+        <h1>Create object from JS String</h1>
+        <p id="demo"></p>
+        <p id="age"></p>
+        <p id="city"></p>
+        <script>
+            
+            var xmlhttpRequest =new XMLHttpRequest();
+            xmlhttpRequest.onreadystatechange =()=>{
+                if(xmlhttpRequest.readyState ==4 & xmlhttpRequest.status ==200){
+                    var myObj =JSON.parse(xmlhttpRequest.responseText);
+                    console.log(myObj);
+                    document.getElementById("demo").innerHTML =myObj.name;
+                    document.getElementById("age").innerHTML =myObj.age;
+                    document.getElementById("city").innerHTML =myObj.city;
+                }
+            }
+            xmlhttpRequest.open("GET","json_demo.text",true);
+            xmlhttpRequest.send()
+        </script>
+    </body>
+</html>

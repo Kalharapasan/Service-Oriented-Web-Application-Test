@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var myArr = JSON.parse(xmlhttp.responseText);
+                document.getElementById("demo").innerHTML = myArr[0];
+            }
+        };
+        xmlhttp.open("GET", "json_data.text", true);
+        xmlhttp.send();
+    </script>
+</body>
+</html>

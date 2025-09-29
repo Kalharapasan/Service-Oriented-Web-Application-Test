@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student to Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 60%;
+      margin: 20px auto;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align: center;">Student Tables</h2>
+  <table id="userTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
+
+  <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'data.json', true);
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        var users = JSON.parse(xhr.responseText);
+        var tableBody = document.querySelector('#userTable tbody');
+
+        users.forEach(function(user) {
+          var row = document.createElement('tr');
+
+          var cellId = document.createElement('td');
+          cellId.textContent = user.id;
+          row.appendChild(cellId);
+
+          var cellName = document.createElement('td');
+          cellName.textContent = user.name;
+          row.appendChild(cellName);
+
+          var cellScore = document.createElement('td');
+          cellScore.textContent = user.score;
+          row.appendChild(cellScore);
+
+          tableBody.appendChild(row);
+        });
+      } else {
+        console.error('Failed to load JSON data');
+      }
+    };
+    xhr.send();
+  </script>
+
+</body>
+</html>
